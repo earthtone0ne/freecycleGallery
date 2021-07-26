@@ -1,0 +1,120 @@
+ul.item-list {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  gap: 1em;
+  li.item-card {
+    flex: 1 1 25%;
+    min-width: 200px;
+    max-width: 360px;
+    padding: 1em;
+    opacity: .25;
+    box-shadow: -2px 2px 4px gray;
+    p {
+      white-space: wrap;
+    }
+    &.item-available {
+      opacity: 1;
+      box-shadow: blue;
+    }
+    &.item-hidden {
+      display: none;
+    }
+  }
+  ul.image-list {
+    overflow-x: scroll;
+    display: flex;
+    list-style: none;
+    padding: 0;
+    padding-bottom: 5px;
+    gap: 10px;
+    img {
+      max-width: 100px;
+      height: 100px;
+      object-fit: cover;
+      cursor: pointer;
+    }
+  } 
+}
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  height: 6px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, .5);
+  box-shadow: 0 0 1px rgba(255, 255, 255, .3);
+}
+
+.form-container {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(150, 150, 150, 0.6);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+.interest-form {
+  display: flex;
+  flex-direction: column;
+  width: clamp(320px, 50vw, 700px);
+  margin: 10vh auto;
+  background-color: white;
+  padding: 5vmin;
+  gap: 1.2em;
+  label {
+    display: flex;
+    flex-wrap: wrap;
+    .label-text {
+      flex: 1 0 200px;
+      margin: 0;
+    }
+    .input {
+      width: 100%;
+      &.input-visited.empty {
+        outline: red 2px solid;
+      }
+    }
+    &.checkbox-section{
+      p {
+        flex: 1 0 100%;
+      }
+      label {
+        display: block;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: space-evenly;
+        max-height: 33vh;
+        overflow-y: auto;
+        flex-wrap: wrap;
+        margin: .5em 1em 0;
+        li {
+          display: inline-block;
+          flex: 1 0 200px;
+          max-width: min(40vw, 180px);
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          line-height: 1.8;
+        }
+      }
+    }
+  }
+}
+button {
+  width: 275px;
+  box-shadow: none;
+  border: none;
+  background-color: cadetblue;
+  color: white;
+  padding: .3em;
+  font-size: 1.1em;
+  align-self: center;
+}
+body.noscroll {
+  overflow: hidden;
+}

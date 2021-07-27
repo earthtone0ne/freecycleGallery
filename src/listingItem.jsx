@@ -8,8 +8,8 @@ const STATUS = {
   4: "hidden",
 }
 
-function ListingItem({status,description,measurements,condition, images}) {
-	return <li class={`item-card item-${STATUS[status]}`}>
+function ListingItem({status, description, measurements, condition, images}) {
+	return <li class={`item-card item-${STATUS[status]}`} key={description}>
     <ImageList images={images} description={description} />
     <h3>{description}</h3>
     <p class="condition">{condition}</p>

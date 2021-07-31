@@ -1,3 +1,7 @@
+html, textarea {
+  color: #333333;
+  font-family: 'Trebuchet MS',helvetica,serif;
+}
 ul.item-list {
   display: flex;
   list-style: none;
@@ -19,6 +23,10 @@ ul.item-list {
     }
     &.item-hidden {
       display: none;
+    }
+    &.item-promised H3::before {
+      content: "Promised: ";
+      font-size: .6em;
     }
   }
   ul.image-list {
@@ -73,6 +81,7 @@ ul.item-list {
     }
     .input {
       width: 100%;
+      font-size: 1.1rem;
       &.input-visited.empty {
         outline: red 2px solid;
       }
@@ -84,11 +93,25 @@ ul.item-list {
       label {
         display: block;
       }
+      .item-ppu {
+        opacity: .7;
+        .checkbox-text::before {
+          content: "Promised: ";
+          font-size: .7em;
+        }
+      }
+      &.invalid {
+        outline: red 2px solid;
+        p {
+          color: darkred;
+          font-weight: bold;
+        }
+      }
       ul {
         list-style: none;
         padding: 0;
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
         max-height: 33vh;
         overflow-y: auto;
         flex-wrap: wrap;
@@ -96,10 +119,8 @@ ul.item-list {
         li {
           display: inline-block;
           flex: 1 0 200px;
-          max-width: min(40vw, 180px);
-          text-overflow: ellipsis;
-          white-space: nowrap;
-          line-height: 1.8;
+          max-width: 210px;
+          line-height: 1.1;
         }
       }
     }
@@ -114,6 +135,9 @@ button {
   padding: .3em;
   font-size: 1.1em;
   align-self: center;
+  &[disabled] {
+    background-color: lightgray;
+  }
 }
 body.noscroll {
   overflow: hidden;

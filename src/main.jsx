@@ -9,7 +9,7 @@ import './style.scss'
 function App(props) {
   const [isFormActive, setIsFormActive] = useState(false);
 
-  const items = itemRows.filter(item => item.status < 4)
+  const items = itemRows.filter(item => item.status < 3)
   items.sort((a,b) => a.status - b.status);
 
   const showFormOverlay = evt => {

@@ -5,7 +5,7 @@ class ItemCheckbox extends Component {
 
   render({ item, checked, toggleCheckbox }) {
     return (
-      <li class="checkbox-item">
+      <li class={`checkbox-item ${item.status == 2 ? 'item-ppu' : ''}`}>
         <label>
           <input
             type="checkbox"
@@ -35,7 +35,7 @@ class RequestForm extends Component {
     this.setState((prevState) => {
       const prevChecked = prevState.itemsOfInterest;
       const key = event.target.dataset.key;
-      prevChecked[key] = !prevChecked[key];
+      prevChecked[key] = event.target.checked;
         return {
         itemsOfInterest: prevChecked, 
         ...prevState
@@ -50,7 +50,6 @@ class RequestForm extends Component {
   render({ items, hideFormOverlay }, { name, email, pickupAvailability, comments, itemsOfInterest }) {
     const onSubmit = e => {
       e.preventDefault();
-      console.log('submit', this.state)
       const emailString = this.encodeOrBlank(email)
       const nameString = this.encodeOrBlank(name)
       const emailName = [emailString, nameString].join('__')
@@ -62,13 +61,11 @@ class RequestForm extends Component {
       ].join('__')
       const value3 = commentPickupString ? `value3=${commentPickupString}` : null
       const params = [value1, value2, value3].filter(x => x).join('&')
-      fetch(`${myUrl}?${params}`)
-      // console.log(`${myUrl}?${params}`)
+      fetch(`${myUrl}?${params}`, {mode: 'no-cors'})
       hideFormOverlay();
     }
     
     const onInput = e => {
-      console.log(e, this.state)
       const { value, name } = e.target;
       this.setState({ [name]: value })
       this.validateOnBlur(e)

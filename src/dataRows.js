@@ -105,13 +105,6 @@ const itemRows = [
     condition:"",
     images: [],
   },{
-    status: 2,
-    description: "Promised",
-    key: "test2",
-    measurements:"",
-    condition:"",
-    images: [],
-  },{
     status: 4,
     description: "Not posted",
     key: "test4",

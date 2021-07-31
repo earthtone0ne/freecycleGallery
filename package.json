@@ -5,7 +5,8 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "predeploy": "npm run build",
+    "postpredeploy": "sed -E -i -- 's|\"\/asset|\"\/freecycleGallery\/asset|g' dist/index.html",
+    "predeploy": "npm run build && npm run postpredeploy",
     "deploy": "gh-pages -d dist"
   },
   "devDependencies": {

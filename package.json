@@ -4,15 +4,19 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.14.5",
+    "@preact/preset-vite": "^2.1.0",
+    "gh-pages": "^3.2.3",
     "sass": "^1.36.0",
     "vite": "^2.0.0-beta.50"
   },
   "dependencies": {
-    "@babel/plugin-proposal-class-properties": "^7.14.5",
-    "@preact/preset-vite": "^2.1.0",
     "preact": "^10.5.13"
-  }
+  },
+  "homepage": "https://earthtone0ne.github.io/freecycleGallery"
 }

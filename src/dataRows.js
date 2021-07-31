@@ -56,7 +56,7 @@ const itemRows = [
     condition:"Metal ",
     images: ['plantHook.jpg'],
   },{
-    status: 1,
+    status: 4,
     description: "Folding plastic table",
     key: "folding",
     measurements:"about 4' square",

@@ -62,8 +62,8 @@ class RequestForm extends Component {
       ].join('__')
       const value3 = commentPickupString ? `value3=${commentPickupString}` : null
       const params = [value1, value2, value3].filter(x => x).join('&')
-      // fetch(`${myUrl}?${params}`)
-      console.log(`${myUrl}?${params}`)
+      fetch(`${myUrl}?${params}`)
+      // console.log(`${myUrl}?${params}`)
       hideFormOverlay();
     }
     

@@ -1,7 +1,7 @@
 import { render } from 'preact';
 
 function ImageItem(source, description) {
-  const imgSource = `../assets/${source}`;
+  const imgSource = `${process.env.PUBLIC_URL || 'public'}/${source}`;
 	return <li class="image-item">
       <img src={imgSource} alt={description} onClick={() => window.open(imgSource)} />
   </li>

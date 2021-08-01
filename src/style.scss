@@ -7,6 +7,11 @@ ul.item-list {
   list-style: none;
   flex-wrap: wrap;
   gap: 1em;
+  height: calc(100vh - 90px);
+  position: fixed;
+  overflow-x: scroll;
+  top: 50px;
+  padding-bottom: 40px;
   li.item-card {
     flex: 1 1 25%;
     min-width: 200px;
@@ -37,8 +42,8 @@ ul.item-list {
     padding-bottom: 5px;
     gap: 10px;
     img {
-      max-width: 100px;
-      height: 100px;
+      max-width: 120px;
+      height: 120px;
       object-fit: cover;
       cursor: pointer;
     }
@@ -50,8 +55,8 @@ ul.item-list {
 }
 ::-webkit-scrollbar-thumb {
   border-radius: 3px;
-  background-color: rgba(0, 0, 0, .5);
-  box-shadow: 0 0 1px rgba(255, 255, 255, .3);
+  background-color: rgba(0, 0, 0, .35);
+  box-shadow: 0 0 1px rgba(255, 255, 255, .2);
 }
 
 .form-container {
@@ -63,15 +68,17 @@ ul.item-list {
   right: 0;
   bottom: 0;
   top: 0;
+  z-index: 100;
 }
 .interest-form {
   display: flex;
   flex-direction: column;
-  width: clamp(320px, 50vw, 700px);
+  width: clamp(320px, 50vw, 740px);
   margin: 10vh auto;
   background-color: white;
   padding: 5vmin;
   gap: 1.2em;
+  z-index: 50;
   label {
     display: flex;
     flex-wrap: wrap;
@@ -135,6 +142,7 @@ button {
   padding: .3em;
   font-size: 1.1em;
   align-self: center;
+  margin: 5px calc(50% - 137.5px);
   &[disabled] {
     background-color: lightgray;
   }

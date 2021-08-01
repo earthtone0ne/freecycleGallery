@@ -50,10 +50,10 @@ const itemRows = [
     images: ['birdfeeders.jpg'],
   },{
     status: 1,
-    description: "Shepherd's hook plant hanger",
+    description: "Shepherd's hook hanger",
     key: "hook",
-    measurements:"8' I think? taller than a room",
-    condition:"Metal ",
+    measurements:"At least 8' - Taller than a room",
+    condition:"Metal hook for hanging a plant or birdfeeder in the yard.",
     images: ['plantHook.jpg'],
   },{
     status: 4,
@@ -105,12 +105,12 @@ const itemRows = [
     condition:"",
     images: [],
   },{
-    status: 4,
-    description: "Not posted",
-    key: "test4",
+    status: 1,
+    description: "Light bulbs",
+    key: "bulbs",
     measurements:"",
-    condition:"",
-    images: [],
+    condition:"Box of lightbulbs. Most are regular compact fluorescents (CFC), a few incandescent, a ring-shaped fluorescent (fits a regular lamp but large), at least one floodlight bulb. Some are new in box; most are used but should be working.",
+    images: ["lightbulbs.jpg"],
   }
 ];
 

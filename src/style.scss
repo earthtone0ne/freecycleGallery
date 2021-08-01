@@ -69,6 +69,22 @@ ul.item-list {
   bottom: 0;
   top: 0;
   z-index: 100;
+  header {
+    display: flex;
+    justify-content: space-between;
+    h3 {
+      display: inline-block;
+      margin: 5px 0;
+    }
+    span {
+      padding: 5px;
+      border: 2px solid cadetblue;
+      border-radius: 3px;
+      color: cadetblue;
+      font-size: .9em;
+      height: 1.3em;
+    }
+  }
 }
 .interest-form {
   display: flex;

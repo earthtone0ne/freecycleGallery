@@ -70,20 +70,29 @@ class RequestForm extends Component {
       this.setState({ [name]: value })
       this.validateOnBlur(e)
     }
+    const handleEscapeKey = e => {
+      if (e.which === 27) {
+        hideFormOverlay();
+      }
+    }
     return (
-      <div class="form-container">
+      <div class="form-container" onKeyDown={handleEscapeKey}>
         <form onSubmit={onSubmit} class="interest-form">
-          <label>
-            <span class="label-text">Name</span>
-            <input
-              class={`input ${!name.trim() && 'empty'}`} type="text" name="name" value={name}
-              onInput={onInput} onBlur={this.validateOnBlur}
-            />
-          </label>
+          <header>
+            <h3>Let me know what you'd like and how to reach you!</h3>
+            <span onClick={hideFormOverlay}>Close</span>
+          </header>
           <label>
             <span class="label-text">Email (phone if you prefer text)</span>
             <input
               class={`input ${!email.trim() && 'empty'}`} type="text" name="email" value={email}
+              onInput={onInput} onBlur={this.validateOnBlur} autoFocus={true}
+            />
+          </label>
+          <label>
+            <span class="label-text">Name</span>
+            <input
+              class={`input ${!name.trim() && 'empty'}`} type="text" name="name" value={name}
               onInput={onInput} onBlur={this.validateOnBlur}
             />
           </label>
